@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sami Ur Rehman - Portfolio</title> </head>
+<body>
+    <header>
+        <h1 class="logo">Sami Ur Rehman</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <video autoplay loop muted playsinline class="background-video">
+            <source src="./your-background-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h2>Hi, I'm Sami Ur Rehman</h2>
+            <p>Turning ideas into interactive digital realities</p>
+            <a href="#projects" class="cta-button">See What I've Built</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content-wrapper">
+            <div class="about-text-content">
+            <p>I'm a dedicated software developer passionate about designing and building innovative digital solutions. With a strong background in computer science, I specialize in creating efficient, reliable, and user-centered applications across various platforms.</p>
+            <p>Outside of coding, I enjoy exploring new technologies, contributing to open-source projects, and collaborating with the developer community. I strive to write clean, maintainable code that drives real-world impact and solves complex problems.</p>
+            </div>
+            <div class="profile-image-container">
+            <img src="./Profile.webp " alt="Sami Ur Rehman - Software Developer" class="profile-image">
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <h2>My Work</h2>
+        <div class="project-container">
+            <div class="project"> 
+                <h3>All-in-One Management System</h3> 
+                <img src="./AllInOneManagement.png" alt="All-in-One Management System interface" class="project-image"> 
+                <p>A comprehensive management system integrating multiple business functions to streamline operations efficiently. Built with C# Windows Form and SQL Server.</p> 
+                <a href="https://github.com/yourusername/all-in-one-management" class="project-link" target="_blank">View Code</a> 
+            </div> 
+
+            <div class="project"> 
+                <h3>Library Management System</h3> 
+                <img src="./LibraryManagement.png" alt="Library Management System interface" class="project-image"> 
+                <p>A system to manage library operations including book inventory, member records, and issue/return processes. Developed using Asp.net (C#)  and Sql Server .</p> 
+                <a href="https://github.com/yourusername/library-management" class="project-link" target="_blank">View Code</a> 
+            </div> 
+
+            <div class="project"> 
+                <h3>Pizza Shop Management System</h3> 
+                <img src="./PizzaShopManagement.png" alt="Pizza Shop Management System interface" class="project-image"> 
+                <p>An application to manage orders, inventory, and staff for a pizza shop. Features include order tracking and sales reporting. Created with C# Windows Form and SQL Server.</p> 
+                <a href="https://github.com/yourusername/pizza-shop-management" class="project-link" target="_blank">View Code</a> 
+            </div> 
+        </div>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Core Technologies</h3>
+                <ul>
+                    <li>C# (.NET Framework, Windows Forms)</li>
+                    <li>SQL Server & SQLite</li>
+                    <li>HTML/CSS/JavaScript</li>
+                    <li>Object-Oriented Programming</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Development Tools</h3>
+                <ul>
+                    <li>Git & GitHub</li>
+                    <li>Visual Studio</li>
+                    <li>Database Management Tools</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Professional Skills</h3>
+                <ul>
+                    <li>Problem Solving</li>
+                    <li>Agile Methodologies</li>
+                    <li>Requirements Analysis</li>
+                    <li>Software Architecture</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-content-wrapper">
+            <div class="contact-info-left">
+                <h3>Let's Connect!</h3>
+                <p>I'm always open to new opportunities, collaborations, or just a friendly chat. Whether you have a project in mind, a question, or simply want to say hello, feel free to reach out using the form or connect with me on social media.</p>
+                <p>I aim to respond to all inquiries as quickly as possible.</p>
+                <div class="social-links-contact">
+                    <a href="https://github.com/SamiUrRehman065" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/samiurrehman065/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="contact-form-right">
+                <form id="contactForm"> <div>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="nameError"></span> </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span> </div>
+                    <div>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <span class="error-message" id="messageError"></span> </div>
+                    <button type="submit">Send Message</button>
+                    <div id="formSuccessMessage" class="success-message"></div> </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sami Ur Rehman. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com/SamiUrRehman065" target="_blank">GitHub Profile</a>
+            <a href="https://www.linkedin.com/in/samiurrehman065/" target="_blank">LinkedIn Profile</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    </body>
+</html>

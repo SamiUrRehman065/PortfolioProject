@@ -1,0 +1,739 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic typography */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text for contrast */
+     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+     color: #f0f0f0; /* Lighter headings for dark theme */
+}
+
+
+
+
+/* Header styles */
+.logo {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96e6a1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: gradient 5s ease infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    background-color: #0d0d0d;;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 4.5rem;
+    align-items: center;
+    padding-top: 0.7rem;
+    
+}
+
+nav a {
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0a7ff4;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #0a7ff4;
+    text-decoration: none;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+#home {
+    height: 100vh;
+    /* REMOVE display: flex, flex-direction, justify-content, align-items FROM HERE */
+    /* They will be applied to .hero-content instead */
+    position: relative; /* Crucial for positioning the video and content on top */
+    overflow: hidden; /* Hides any video overflow outside the section */
+    color: #e0e0e0; /* Light text for home section */
+    text-align: left; /* Default text alignment */
+    /* REMOVE THE 'background' PROPERTY HERE */
+}
+.background-video {
+    position: absolute; /* Positions the video relative to its parent (#home) */
+    top: 50%;
+    left: 50%;
+    min-width: 100%; /* Ensures video always covers the width */
+    min-height: 100%; /* Ensures video always covers the height */
+    width: auto;
+    height: auto;
+    z-index: 1; /* Puts the video behind the text content */
+    transform: translate(-50%, -50%); /* Centers the video precisely */
+    object-fit: cover; /* Ensures video covers the element without distortion, cropping if necessary */
+    filter: brightness(90%); /* NEW: Makes the video darker to improve text readability */
+}
+.hero-content {
+    position: relative; /* Places this content on top of the video */
+    z-index: 2; /* Ensures content is above the video */
+    display: flex; /* Makes it a flex container for its children */
+    flex-direction: column; /* Stacks h2, p, button vertically */
+    justify-content: center; /* Vertically center content within the hero section */
+    align-items: flex-start; /* Keep content left-aligned */
+    height: 100%; /* Ensure content div takes full height of #home */
+    width: 100%; /* Ensure content div takes full width of #home */
+    max-width: 1200px; /* Optional: Limit content width for readability, adjust as needed */
+    margin: 0 auto; /* Centers the content block horizontally if max-width is set */
+}
+#home h2 {
+    font-size: 3.5rem; /* Slightly larger for more impact */
+    margin-bottom: 15px; /* Reduced margin slightly */
+    font-weight: bold;
+    background:  linear-gradient(45deg, #cd2f2f, #2d988f, #2e7d91, #559a5e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient 5s ease infinite;
+    /*text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Added strong shadow for contrast */
+    max-width: 600px; /* Limit width for readability */
+}
+
+#home p {
+    font-size: 1.3rem; /* Slightly larger */
+     background: linear-gradient(45deg, #cd2f2f, #2d988f, #2e7d91, #559a5e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 40px; /* Increased margin for button separation */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Added shadow for contrast */
+    max-width: 550px; /* Limit width for readability */
+}
+
+.cta-button {
+    padding: 15px 30px; /* Larger button */
+    background-color: #00bcd4;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: inline-block;
+    font-size: 1.1rem; /* Larger font */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+    background-color: #008ba3;
+    transform: translateY(-5px); /* More pronounced lift */
+    box-shadow: 0 8px 15px rgba(0, 188, 212, 0.3); /* Subtle shadow on hover */
+}
+/* --- END FIXES FOR HOME SECTION --- */
+/* --- MODERNIZED ABOUT SECTION STYLES --- */
+#about {
+    background-color: #1a1a1a; /* Consistent dark background, or slightly lighter if desired: #222222 */
+    padding: 100px 20px; /* Increased top/bottom padding for more breathing room */
+    text-align: center;
+    color: #e0e0e0;
+}
+
+#about h2 {
+    font-size: 2.8rem; /* Slightly larger and more impactful heading */
+    margin-bottom: 50px; /* More space below heading */
+    color: #f0f0f0;
+    position: relative;
+    display: inline-block;
+}
+
+#about h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* Adjust line position */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* Wider accent line */
+    height: 5px; /* Thicker accent line */
+    background-color: #0a7ff4;
+    border-radius: 2px;
+}
+
+.about-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px; /* Slightly wider content area */
+    margin: 0 auto;
+    gap: 60px; /* Increased space between image and text */
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 30px; /* Internal padding for the wrapper itself */
+    background-color: #222222; /* A subtle background for the wrapper */
+    border-radius: 15px; /* Rounded corners for a softer, modern look */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* More pronounced, soft shadow */
+}
+
+.profile-image-container {
+    flex-shrink: 0;
+    order: 2;
+    /* Add some internal padding to container to prevent image hugging edges */
+    padding: 15px;
+    background-color: #2c2c2c; /* Subtle background for the image card */
+    border-radius: 50%; /* Keep container circular */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Soft shadow for the container */
+}
+
+.profile-image {
+    width: 280px; /* Slightly larger image for more presence */
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #00bcd4; /* Accent color border, slightly thinner */
+    box-shadow: 0 0 30px rgba(0, 188, 212, 0.6); /* Softer, glowing shadow */
+    transition: all 0.4s ease-in-out; /* Smoother transition */
+}
+
+.profile-image:hover {
+    transform: scale(1.03); /* Subtle scale up */
+    box-shadow: 0 0 45px rgba(0, 188, 212, 0.8); /* More intense glow on hover */
+    /* Removed the rotation for a cleaner, more modern hover */
+}
+
+.about-text-content {
+    flex-grow: 1;
+    text-align: left;
+    order: 1;
+    max-width: 600px;
+    padding: 20px; /* Internal padding for the text block */
+    /* Removed specific background-color to let wrapper handle it */
+    /* Add a subtle border or bottom line if desired, but often cleaner without */
+}
+
+#about p {
+    font-size: 1.15rem; /* Slightly larger font for readability */
+    margin: 0 0 25px 0; /* Adjusted margin for spacing */
+    line-height: 1.8; /* Increased line height for better readability */
+    color: #d0d0d0; /* Slightly lighter text for better contrast */
+}
+
+#about p:last-of-type {
+    margin-bottom: 0;
+}
+/* --- END MODERNIZED ABOUT SECTION STYLES --- */
+
+/* Projects Section Styles */
+#projects {
+    background-color: #1a1a1a;
+    padding: 80px 20px;
+    text-align: center;
+    
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #f0f0f0;
+    position: relative;
+    display: inline-block;
+}
+
+#projects h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #0a7ff4;
+    border-radius: 2px;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project {
+    background-color: #2c2c2c; /* Darker card background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Darker shadow */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96e6a1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient 5s ease infinite;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent look */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project p {
+    font-size: 1rem;
+    color: #c0c0c0;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows paragraphs to take available space */
+}
+
+.project-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00bcd4;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Aligns button to the left within flex container */
+}
+
+.project-link:hover {
+    background-color: #008ba3;
+}
+
+/* Skills Section Styles */
+#skills {
+    background-color: #222222;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #f0f0f0;
+    position: relative;
+    display: inline-block;
+}
+
+#skills h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #0a7ff4;
+    border-radius: 2px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    background-color: #2c2c2c;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    flex: 1; /* Allows categories to grow and shrink */
+    min-width: 280px; /* Minimum width for each category */
+    text-align: left;
+    /* --- NEW: Hover transition for skill categories --- */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent; /* Add a transparent border for the hover effect */
+
+}
+/* --- NEW: Hover effect for skill categories --- */
+.skill-category:hover {
+    transform: translateY(-8px); /* Lift the card slightly */
+    background-color: #3a3a3a; /* Darken background slightly */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6); /* More pronounced shadow */
+    border-color: #0a7ff4; /* Add an accent border */
+}
+.skill-category h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #0a7ff4;
+    border-bottom: 2px solid #3a3a3a; /* Subtle separator */
+    padding-bottom: 10px;
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    font-size: 1.05rem;
+    padding: 8px 0;
+    border-bottom: 1px dotted #3a3a3a; /* Dotted separator for items */
+    color: #c0c0c0;
+        /* --- NEW: Hover transition for skill list items --- */
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.skill-category li:last-child {
+    border-bottom: none;
+}
+/* --- NEW: Hover effect for individual skill list items --- */
+.skill-category li:hover {
+    color: #00bcd4; /* Change text color to an accent */
+    transform: translateX(5px); /* Move text slightly to the right */
+}
+/* Contact Section Styles */
+#contact {
+    background-color: #1a1a1a;
+    padding: 80px 20px;
+    text-align: center; /* Center the overall section title */
+    color: #e0e0e0;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #f0f0f0;
+    position: relative;
+    display: inline-block;
+}
+
+#contact h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #0a7ff4;
+    border-radius: 2px;
+}
+
+/* --- NEW Contact Layout with Flexbox --- */
+.contact-content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center; /* Center the content columns */
+    align-items: flex-start; /* Align items to the top (text might be shorter than form) */
+    gap: 50px; /* Space between the info and the form */
+    max-width: 1200px; /* Max width for the entire content area */
+    margin: 0 auto; /* Center the wrapper */
+    padding-top: 20px; /* Some space below the main H2 */
+}
+
+.contact-info-left {
+    flex: 1; /* Allow this column to grow */
+    min-width: 300px; /* Minimum width for the left column */
+    max-width: 500px; /* Max width for the left column */
+    text-align: left; /* Align text within this column to the left */
+    padding: 20px; /* Add some internal padding */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+.contact-info-left h3 {
+    font-size: 1.8rem;
+    color: #0a7ff4; /* Accent color for sub-heading */
+    margin-bottom: 20px;
+}
+
+.contact-info-left p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #c0c0c0; /* Lighter text for info */
+}
+
+.contact-info-left .social-links-contact {
+    margin-top: 30px;
+    display: flex; /* Make social links flex for horizontal layout */
+    gap: 20px; /* Space between social links */
+}
+
+.contact-info-left .social-links-contact a {
+    color: #00bcd4; /* Accent color for social links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.contact-info-left .social-links-contact a:hover {
+    color: #0a7ff4;
+    transform: translateY(-3px);
+}
+
+.contact-form-right {
+    flex: 1; /* Allow the form column to grow */
+    min-width: 350px; /* Minimum width for the form column */
+    max-width: 600px; /* Max width for the form column */
+    padding: 30px;
+    background-color: #2c2c2c; /* Same as project cards */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+#contact form div {
+    margin-bottom: 20px;
+}
+
+#contact label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #f0f0f0;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact input[type="text"]:focus,
+#contact input[type="email"]:focus,
+#contact textarea:focus {
+    border-color: #0a7ff4;
+    box-shadow: 0 0 0 3px rgba(10, 127, 244, 0.3);
+    outline: none;
+}
+
+#contact textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+#contact button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contact button[type="submit"]:hover {
+    background-color: #008ba3;
+    transform: translateY(-2px);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #0d0d0d;
+    color: #ccc;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+}
+
+.social-links a {
+    color: #0a7ff4;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #00bcd4; /* Another accent color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    nav ul {
+        gap: 2rem;
+    }
+
+    /* About section for smaller screens: stack elements */
+    .about-content-wrapper {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center; /* Center text when stacked */
+        gap: 30px; /* Adjust gap for stacking */
+    }
+
+    .profile-image-container {
+        order: 1; /* Image on top when stacked */
+    }
+
+    .about-text-content {
+        order: 2; /* Text below image when stacked */
+        text-align: center; /* Center text when stacked */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+
+    #home h2 {
+        font-size: 2.5rem;
+    }
+
+    #home p {
+        font-size: 1.1rem;
+    }
+
+    #about, #projects, #skills, #contact {
+        padding: 60px 15px;
+    }
+
+    #about h2, #projects h2, #skills h2, #contact h2 {
+        font-size: 2rem;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .skill-category {
+        min-width: unset; /* Remove min-width to allow full width */
+    }
+}
+
+@media (max-width: 480px) {
+    #home h2 {
+        font-size: 2rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+
+    #about, #projects, #skills, #contact {
+        padding: 40px 10px;
+    }
+
+    #about h2, #projects h2, #skills h2, #contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .skill-category {
+        width: 100%;
+    }
+}
+/* ADD THESE STYLES TO YOUR styles.css FILE */
+
+.error-message {
+    color: #ff6b6b; /* A prominent red for errors */
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.success-message {
+    color: #4CAF50; /* Green for success */
+    font-size: 1em;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+/* Optional: Style inputs with errors */
+#contact input.error,
+#contact textarea.error {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
+}
