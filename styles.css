@@ -713,27 +713,3 @@ footer {
         width: 100%;
     }
 }
-/* ADD THESE STYLES TO YOUR styles.css FILE */
-
-.error-message {
-    color: #ff6b6b; /* A prominent red for errors */
-    font-size: 0.9em;
-    margin-top: 5px;
-    display: none; /* Hidden by default, shown by JS */
-}
-
-.success-message {
-    color: #4CAF50; /* Green for success */
-    font-size: 1em;
-    margin-top: 15px;
-    text-align: center;
-    font-weight: bold;
-    display: none; /* Hidden by default, shown by JS */
-}
-
-/* Optional: Style inputs with errors */
-#contact input.error,
-#contact textarea.error {
-    border-color: #ff6b6b;
-    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
-}
